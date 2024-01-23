@@ -1,0 +1,26 @@
+.header {
+    box-sizing: content-box;
+    margin: auto;
+    font-family: Inter;
+    text-decoration: none;
+    background-color: rgb(253, 255, 245);
+    display: flex;
+    border-radius: 30px;
+}
+
+.header__logo {
+    margin-left: 30px;
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 300px;
+    box-shadow: -15px 0px 0 0 rgb(245, 244, 228);
+    box-sizing: border-box;
+}
+
+.header__title {
+    margin: 0;
+    align-self: center;
+    margin-left: 160px;
+    font-size: 40px;
+    font-weight: 400;
+}

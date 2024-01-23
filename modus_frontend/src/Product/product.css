@@ -1,0 +1,43 @@
+.product {
+    font-family: Inter;
+    display: flex;
+    padding: 12px;
+    position: relative;
+    transition: .2s ease box-shadow;
+    border-radius: 24px;
+    flex-direction: column;
+    max-width: 200px;
+    border: 1px solid red;
+}
+
+.product__image {
+    border-radius: 20px;
+}
+
+.product__cost {
+    
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+.product__full-cost {
+    text-align: center;
+    text-decoration: line-through;
+    color: #9E9B98;
+    text-decoration-color: #9E9B98;
+}
+
+.product__sale {
+    color: #FA6A3C;
+    text-align: center;
+    font-size: 28px;
+}
+
+.product__button-buy {
+    font-family: Inter;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+}
