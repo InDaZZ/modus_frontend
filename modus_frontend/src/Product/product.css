@@ -7,11 +7,16 @@
     border-radius: 24px;
     flex-direction: column;
     max-width: 200px;
-    border: 1px solid red;
+    background-color: white;
 }
 
 .product__image {
     border-radius: 20px;
+}
+
+.product__name {
+    margin-top: 15px;
+    text-align: center;
 }
 
 .product__cost {
@@ -35,6 +40,7 @@
 }
 
 .product__button-buy {
+    margin-top: 10px;
     font-family: Inter;
     font-weight: 500;
     border: none;

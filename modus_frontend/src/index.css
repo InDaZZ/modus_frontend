@@ -4,6 +4,7 @@
 body {
   max-width: 1280px;
   margin: auto;
+  background-color: #F5F4F2;
 }
 
 @media screen and (max-width: 850px) {
