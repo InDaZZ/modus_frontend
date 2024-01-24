@@ -7,8 +7,19 @@ import Main from '../Main/Main.js';
 function App() {
   return (
     <>
-      <Header></Header> 
-      <Main></Main>
+      <Header></Header>
+      <div>
+        <Product></Product>
+        <Product></Product>
+        <Product></Product>
+        <Product></Product>
+        <Product></Product>
+        <Product></Product>
+        <Product></Product>
+        <Product></Product>
+        <Product></Product>
+        <Product></Product>
+      </div>
     </>
   );
 }
