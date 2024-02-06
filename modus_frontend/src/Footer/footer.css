@@ -1,0 +1,56 @@
+.map__style {
+    margin: auto;
+    width: 100%;
+    height: 300px;
+    border: 1px solid rgb(255, 157, 46);
+    box-sizing: border-box;
+
+}
+
+.footer {
+    font-family: Inter;
+
+    width: 100%;
+    background-color: #292929;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.footer__contact-container {
+    padding-top: 40px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.footer__contacts {
+    margin: 0;
+    font-weight: normal;
+}
+
+.footer__contact {
+    margin: 10px 0;
+}
+
+.footer__hh-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.footer__hh {
+    margin: 0;
+    font-weight: normal;
+}
+
+.footer__hh-link {
+    color: #8fddff;
+    margin: 10px 0;
+}
+
+.footer__hh-qrlink {
+    max-width: 200px;
+    margin: auto;
+}

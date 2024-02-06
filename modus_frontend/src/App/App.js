@@ -4,12 +4,17 @@ import Header from '../Header/Header.js';
 import Product from '../Product/Product.js';
 import Category from '../Category/Category.js';
 import Main from '../Main/Main.js';
+import Footer from '../Footer/Footer.js'
 import Products from '../Products/Products.js';
+import { YMaps, Map } from '@pbe/react-yandex-maps';
+
 function App() {
   return (
     <>
       <Header></Header>
-     <Main></Main>
+      <Main></Main>
+      <Footer></Footer>
+
     </>
   );
 }

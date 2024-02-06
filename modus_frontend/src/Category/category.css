@@ -1,8 +1,9 @@
 .category {
+    font-family: Inter;
     border-radius: 24px 24px 24px 24px;
-    background-color: rgb(255, 157, 46);
+    border: 1px solid rgb(255, 157, 46, 0.6);
     display: grid;
-    
+    grid-template-rows: auto min-content;
 }
 
 .category__image {
@@ -15,11 +16,17 @@
 
 .category__title-container {
     display: flex;
+    position: absolute;
+    top: -32px;
+    left: 0px;
+    border-radius: 0px 10px 0px 0;
+    background-color: #F5F4F2;
+    width: fit-content;
 }
 
 .category__title {
     margin: 0;
-    margin-left: 31%;
+    margin-left: 10px;
     font-family: 'Inter';
     font-weight: 400;
     font-size: 28px;
@@ -30,4 +37,18 @@
     height: 28px;
     padding: 4px;
     box-sizing: border-box;
+}
+
+.category__price {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+.category__info {
+    font-size: 18px;
+    /* font-weight: 500; */
+    margin: 8px 0;
+    font-weight: 500;
+
 }
