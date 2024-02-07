@@ -9,16 +9,17 @@
 
 .footer {
     font-family: Inter;
-
     width: 100%;
     background-color: #292929;
     border-radius: 5px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 3fr 1fr;
 }
 
 .footer__contact-container {
-    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
     color: #ffffff;
 }
@@ -35,7 +36,7 @@
 .footer__hh-container {
     display: flex;
     flex-direction: column;
-    padding-top: 40px;
+    padding-top: 30px;
     color: #ffffff;
     text-align: center;
 }
