@@ -7,14 +7,14 @@ import Main from '../Main/Main.js';
 import Footer from '../Footer/Footer.js'
 import Products from '../Products/Products.js';
 import { YMaps, Map } from '@pbe/react-yandex-maps';
+import AboutUs from '../AboutUs/AboutUs.js';
 
 function App() {
   return (
     <>
       <Header></Header>
-      <Main></Main>
-      <Footer></Footer>
-
+      <AboutUs></AboutUs>
+      
     </>
   );
 }

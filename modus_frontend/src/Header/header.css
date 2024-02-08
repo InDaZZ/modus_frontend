@@ -46,6 +46,8 @@
 }
 
 .header__navigation-element {
+    color: rgb(255, 157, 46, 0.6);
+    text-decoration: none;
     border: 2px solid rgb(255, 157, 46);
     width: fit-content;
     border-top: none;

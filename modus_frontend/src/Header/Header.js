@@ -7,9 +7,9 @@ function Header({ }) {
       <header className='header'>
          <img src={logoWhite} className='header__logo' alt='Логотип'></img>
          <nav className='header__navigation'>
-            <a className='header__navigation-element'>О нас</a>
+            <a href='#footer__contacts' className='header__navigation-element'>Контакты</a>
             <a className='header__navigation-element'>Акции</a>
-            <a className='header__navigation-element'>Скидки</a>
+            <a className='header__navigation-element'>О нас</a>
          </nav>
          <h1 className='header__title'>Ресторан для всей семьи</h1>
       </header>

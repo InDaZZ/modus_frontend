@@ -8,7 +8,7 @@ function Footer({ }) {
     return (
         <footer className="footer">
             <div className="footer__contact-container">
-                <h3 className="footer__contacts">Контакты:</h3>
+                <h3 className="footer__contacts" id="footer__contacts">Контакты:</h3>
                 <p className="footer__contact">+799999999</p>
                 <p className="footer__contact">modus@mail.ru</p>
             </div>
