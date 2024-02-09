@@ -1,13 +1,13 @@
 import React from "react";
 import './product.css';
-function Product({ }) {
+function Product({ image, name, cost, sale }) {
     return (
         <div className="product">
-            <img src="https://eda.yandex/images/3790679/a90d10946021c77e20c7d54cb4972cf8-216x188.jpeg" alt='изображение продукта' className="product__image"></img>
-            <div className="product__name">Ролл Филадельфия</div>
+            <img src={image} alt='изображение продукта' className="product__image"></img>
+            <div className="product__name">{name}</div>
             <div className="product__cost">
-                <span className="product__full-cost">555₽</span>
-                <span className="product__sale">410₽</span>
+                <span className="product__full-cost_sale">{cost} ₽</span>
+                <span className="product__sale">{sale}</span>
             </div>
             <button className="product__button-buy">+ Добавить</button>
         </div>

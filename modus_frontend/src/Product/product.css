@@ -20,13 +20,17 @@
 }
 
 .product__cost {
-    
     display: flex;
     flex-direction: column;
-    margin-top: 15px;
+   margin: 15px 0;
 }
 
 .product__full-cost {
+    text-align: center;
+    font-size: 25px;
+}
+
+.product__full-cost_sale{
     text-align: center;
     text-decoration: line-through;
     color: #9E9B98;
@@ -40,7 +44,6 @@
 }
 
 .product__button-buy {
-    margin-top: 10px;
     font-family: Inter;
     font-weight: 500;
     border: none;

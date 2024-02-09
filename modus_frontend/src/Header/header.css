@@ -4,7 +4,7 @@
     grid-template-rows: min-content 1fr;
     font-family: Inter;
     text-decoration: none;
-    color: rgb(255, 157, 46, 0.6);
+    color: rgb(255, 157, 46);
     background-color: #292929;
     border-radius: 30px;
 }
@@ -46,7 +46,7 @@
 }
 
 .header__navigation-element {
-    color: rgb(255, 157, 46, 0.6);
+    color: rgb(255, 157, 46);
     text-decoration: none;
     border: 2px solid rgb(255, 157, 46);
     width: fit-content;

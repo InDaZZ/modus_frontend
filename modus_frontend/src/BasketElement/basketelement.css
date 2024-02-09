@@ -1,0 +1,53 @@
+.basketelement {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    justify-content: space-between;
+    background-color: #FFFFFF;
+    padding: 15px;
+    box-sizing: border-box;
+    padding-bottom: 20px;
+
+
+}
+
+.basketelement__image {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.basketelement__name-container {
+    width: 100%;
+    margin-left: 10px;
+    border-bottom: 1px solid rgb(128, 128, 128, 0.5);
+}
+
+.basketelement__name {
+    margin: 0;
+}
+
+.basketelement__info-container {
+    display: flex;
+    margin-top: 20px;
+}
+
+.basketelement__info {
+    margin: 0;
+}
+
+.basketelement__buttons-container {
+    display: flex;
+    align-items: center;
+    background-color: #F5F4F2;
+    border-radius: 15px;
+
+}
+
+.basketelement__button {
+    width: 32px;
+    height: 32px;
+    background-color: #F5F4F2;
+    border: none;
+    border-radius: 15px;
+}

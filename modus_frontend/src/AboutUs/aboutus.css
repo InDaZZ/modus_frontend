@@ -5,6 +5,9 @@
     font-size: 20px;
     padding: 0px 10px;
     box-sizing: border-box;
+    background-color: #292929;
+    color: rgba(255, 255, 255, 0.65);;
+    color: rgb(255, 157, 46);;
 }
 
 .aboutus__element {
