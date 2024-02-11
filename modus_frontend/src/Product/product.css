@@ -8,6 +8,10 @@
     background-color: white;
 }
 
+.product_stop {
+    opacity: 0.8;
+}
+
 .product__image {
     border-radius: 20px;
     width: 100%;

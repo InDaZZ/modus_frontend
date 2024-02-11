@@ -4,36 +4,20 @@ import Product from "../Product/Product.js";
 import Header from '../Header/Header.js';
 import Footer from '../Footer/Footer.js'
 
-function Products({ }) {
+function Products({ products }) {
 
+    function renderProduct(products) {
+        console.log(12)
+        return products.map((product) => {
+            return (
+                <Product image={product.image} name={product.name} cost={product.cost} sale={'450₽'} product={product.type}></Product>
+            )
+        })
+    }
     return (
-            <section className="products">
-                <Product image={'https://eda.yandex/images/3790679/a90d10946021c77e20c7d54cb4972cf8-216x188.jpeg'} name={'Ролл Филадельфия'} cost={'555₽'} sale={'450₽'}></Product>
-                <Product image={'https://eda.yandex/images/3790679/a90d10946021c77e20c7d54cb4972cf8-216x188.jpeg'} name={'Ролл Филадельфия'} cost={'555₽'} sale={'450₽'}></Product>
-                <Product image={'https://eda.yandex/images/3790679/a90d10946021c77e20c7d54cb4972cf8-216x188.jpeg'} name={'Ролл Филадельфия'} cost={'555₽'} sale={'450₽'}></Product>
-                <Product image={'https://eda.yandex/images/3790679/a90d10946021c77e20c7d54cb4972cf8-216x188.jpeg'} name={'Ролл Филадельфия'} cost={'555₽'} sale={'450₽'}></Product>
-                <Product image={'https://eda.yandex/images/3790679/a90d10946021c77e20c7d54cb4972cf8-216x188.jpeg'} name={'Ролл Филадельфия'} cost={'555₽'} sale={'450₽'}></Product>
-                <Product image={'https://eda.yandex/images/3790679/a90d10946021c77e20c7d54cb4972cf8-216x188.jpeg'} name={'Ролл Филадельфия'} cost={'555₽'} sale={'450₽'}></Product>
-                <Product image={'https://eda.yandex/images/3790679/a90d10946021c77e20c7d54cb4972cf8-216x188.jpeg'} name={'Ролл Филадельфия'} cost={'555₽'} sale={'450₽'}></Product>
-                <Product image={'https://eda.yandex/images/3790679/a90d10946021c77e20c7d54cb4972cf8-216x188.jpeg'} name={'Ролл Филадельфия'} cost={'555₽'} sale={'450₽'}></Product>
-                <Product image={'https://eda.yandex/images/3790679/a90d10946021c77e20c7d54cb4972cf8-216x188.jpeg'} name={'Ролл Филадельфия'} cost={'555₽'} sale={'450₽'}></Product>
-                <Product image={'https://eda.yandex/images/3790679/a90d10946021c77e20c7d54cb4972cf8-216x188.jpeg'} name={'Ролл Филадельфия'} cost={'555₽'} sale={'450₽'}></Product>
-                <Product image={'https://eda.yandex/images/3790679/a90d10946021c77e20c7d54cb4972cf8-216x188.jpeg'} name={'Ролл Филадельфия'} cost={'555₽'} sale={'450₽'}></Product>
-                <Product image={'https://eda.yandex/images/3790679/a90d10946021c77e20c7d54cb4972cf8-216x188.jpeg'} name={'Ролл Филадельфия'} cost={'555₽'} sale={'450₽'}></Product>
-                <Product image={'https://eda.yandex/images/3790679/a90d10946021c77e20c7d54cb4972cf8-216x188.jpeg'} name={'Ролл Филадельфия'} cost={'555₽'} sale={'450₽'}></Product>
-                <Product image={'https://eda.yandex/images/3790679/a90d10946021c77e20c7d54cb4972cf8-216x188.jpeg'} name={'Ролл Филадельфия'} cost={'555₽'} sale={'450₽'}></Product>
-                <Product image={'https://eda.yandex/images/3790679/a90d10946021c77e20c7d54cb4972cf8-216x188.jpeg'} name={'Ролл Филадельфия'} cost={'555₽'} sale={'450₽'}></Product>
-                <Product image={'https://eda.yandex/images/3790679/a90d10946021c77e20c7d54cb4972cf8-216x188.jpeg'} name={'Ролл Филадельфия'} cost={'555₽'} sale={'450₽'}></Product>
-                <Product image={'https://eda.yandex/images/3790679/a90d10946021c77e20c7d54cb4972cf8-216x188.jpeg'} name={'Ролл Филадельфия'} cost={'555₽'} sale={'450₽'}></Product>
-                <Product image={'https://eda.yandex/images/3790679/a90d10946021c77e20c7d54cb4972cf8-216x188.jpeg'} name={'Ролл Филадельфия'} cost={'555₽'} sale={'450₽'}></Product>
-                <Product image={'https://eda.yandex/images/3790679/a90d10946021c77e20c7d54cb4972cf8-216x188.jpeg'} name={'Ролл Филадельфия'} cost={'555₽'} sale={'450₽'}></Product>
-                <Product image={'https://eda.yandex/images/3790679/a90d10946021c77e20c7d54cb4972cf8-216x188.jpeg'} name={'Ролл Филадельфия'} cost={'555₽'} sale={'450₽'}></Product>
-                <Product image={'https://eda.yandex/images/3790679/a90d10946021c77e20c7d54cb4972cf8-216x188.jpeg'} name={'Ролл Филадельфия'} cost={'555₽'} sale={'450₽'}></Product>
-                <Product image={'https://eda.yandex/images/3790679/a90d10946021c77e20c7d54cb4972cf8-216x188.jpeg'} name={'Ролл Филадельфия'} cost={'555₽'} sale={'450₽'}></Product>
-                <Product image={'https://eda.yandex/images/3790679/a90d10946021c77e20c7d54cb4972cf8-216x188.jpeg'} name={'Ролл Филадельфия'} cost={'555₽'} sale={'450₽'}></Product>
-                <Product image={'https://eda.yandex/images/3790679/a90d10946021c77e20c7d54cb4972cf8-216x188.jpeg'} name={'Ролл Филадельфия'} cost={'555₽'} sale={'450₽'}></Product>
-                <Product image={'https://eda.yandex/images/3790679/a90d10946021c77e20c7d54cb4972cf8-216x188.jpeg'} name={'Ролл Филадельфия'} cost={'555₽'} sale={'450₽'}></Product>
-            </section>
+        <section className="products">
+            {renderProduct(products)}
+        </section>
     )
 
 }

@@ -7,6 +7,7 @@
     color: rgb(255, 157, 46);
     background-color: #292929;
     border-radius: 30px;
+    position: relative;
 }
 
 .header__logo {
@@ -35,7 +36,7 @@
 .header__navigation {
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     grid-row-start: 1;
     grid-column-start: 2;
     align-items: unset;
@@ -43,6 +44,8 @@
     justify-self: center;
     font-weight: 500;
     font-size: 19px;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .header__navigation-element {
@@ -53,4 +56,37 @@
     border-top: none;
     border-radius: 0 0 10px 10px;
     padding: 0 6px;
+    height: fit-content;
+}
+
+.header__basket-button {
+    background-color: transparent;
+    border: solid;
+    border-radius: 10px;
+    display: flex;
+    padding: 0;
+    border: 2px solid rgb(255, 157, 46);
+    padding: 5px;
+    background-color: rgb(255, 157, 46);
+}
+
+
+.header__basket-image {
+    display: block;
+   
+    background-size: contain;
+    width: 30px;
+    height: 25px;
+    background-image: url(../images/corsina\ 2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 5px;
+}
+
+
+.header__basket-sum {
+    text-wrap: nowrap;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
