@@ -47,6 +47,10 @@
     font-size: 28px;
 }
 
+.product__sale_disabled {
+    display: none;
+}
+
 .product__button-buy {
     font-family: Inter;
     font-weight: 500;

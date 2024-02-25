@@ -1,0 +1,134 @@
+.popup {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: all 0.8s linear;
+  visibility: hidden;
+  z-index: 2;
+  font-family: Inter;
+}
+
+.popup__image {
+  max-width: 75vw;
+  max-height: 75vh;
+  border-radius: 10px 0 0 10px;
+}
+
+.popup_active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup__image-container {
+  border: 1px solid rgb(128, 128, 128, 0.8);
+  border-radius: 10px;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.popup_image {}
+
+.popup__button-close {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  left: 438px;
+  top: -45px;
+  background-image: url(../images/Close-Icon.svg);
+  background-color: rgb(0, 0, 0, 0);
+  border: none;
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 650px) {
+  .popup__button-close {
+    left: 260px;
+    bottom: 346px;
+    max-width: 20px;
+    max-height: 20px;
+    background-image: url(../images/Close-Icon-mobile.svg);
+  }
+}
+
+.popup__button-close_image {
+  top: -40px;
+  right: -40px;
+  left: auto;
+  bottom: auto;
+}
+
+@media screen and (max-width: 650px) {
+  .popup__button-close_image {
+    top: -30px;
+    right: 0px;
+  }
+}
+
+.popup__image-content-container {
+  width: 220px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding-top: 10%;
+  border-radius: 0 10px 10px 0;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+.popup__image-title {
+  margin: 0;
+}
+
+.popup__image-price-container {
+  display: flex;
+  width: 80;
+  margin: 15px auto 0;
+  font-size: 17px;
+}
+
+.popup__image-price-full-cost {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.popup__image-price-sale {
+  text-decoration: line-through;
+  color: #9E9B98;
+  text-decoration-color: #9E9B98;
+  font-size: 17px;
+  margin: 0;
+}
+
+.popup__image-sale {
+  color: #FA6A3C;
+  text-align: center;
+  font-size: 20px;
+  margin: 0;
+}
+
+.popup__image-cost {
+  margin: 0;
+}
+
+
+.popup__image-bfc {
+  margin: 15px auto 0;
+  border-bottom: 1px solid rgb(128, 128, 128, 0.5);
+  width: 80%;
+  padding-bottom: 5px;
+  font-size: 19px;
+}
+
+.popup__image-price {}
+
+.popup__image-sale {}
