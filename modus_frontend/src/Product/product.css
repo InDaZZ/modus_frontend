@@ -25,8 +25,10 @@
 
 .product__cost {
     display: flex;
-    flex-direction: column;
-   margin: 15px 0;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
 }
 
 .product__full-cost {
@@ -34,7 +36,7 @@
     font-size: 25px;
 }
 
-.product__full-cost_sale{
+.product__full-cost_sale {
     text-align: center;
     text-decoration: line-through;
     color: #9E9B98;
@@ -42,9 +44,9 @@
 }
 
 .product__sale {
-    color: #FA6A3C;
+    color: #fa3737;
     text-align: center;
-    font-size: 28px;
+    font-size: 25px;
 }
 
 .product__sale_disabled {

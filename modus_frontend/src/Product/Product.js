@@ -1,33 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import './product.css';
 import { isDisabled } from "@testing-library/user-event/dist/utils";
 import { toHaveErrorMessage } from "@testing-library/jest-dom/dist/matchers";
+import { useAction } from "../hooks/useActions";
+import { useSelector } from "react-redux";
+import { calcSale } from "../Functions/calcSale";
 function Product({ image, name, cost, sale, type, openProductPopup, showProductPopup, product }) {
-
-    function test() { 
+    console.log(useSelector(state => state.basket))
+  
+    function openPopup() {
         openProductPopup(product)
     }
-
-
-    function testSale(cost, sale) {
-        let procent = cost / 100 * sale
-        return Math.round(cost - procent)
-    }
+    const { addToBasket } = useAction()
+    
     function buttonState(type) {
-        if (type === 'стоп') {
+        if (type === false) {
             return true
         }
         return false
     }
     return (
-        <div className={(type !== 'стоп') ? 'product' : 'product product_stop'} onClick={test}>
-            <img src={image} alt='изображение продукта' className="product__image"></img>
+        <div className={(type === true) ? 'product' : 'product product_stop'}>
+            <img src={image} alt='изображение продукта' className="product__image" onClick={openPopup}></img>
             <div className="product__name">{name}</div>
             <div className="product__cost">
                 <span className={sale ? "product__full-cost_sale" : 'product__full-cost'}>{cost}₽</span>
-                <span className={sale ? "product__sale" : "product__sale_disabled"}>{testSale(cost, sale)}₽</span>
+                <span className={sale ? "product__sale" : "product__sale_disabled"}>/{calcSale(cost, sale)}₽</span>
             </div>
-            <button className="product__button-buy" onClick={() => { console.log('я работаю') }} disabled={buttonState(type)}>+ Добавить</button>
+            <button className="product__button-buy" onClick={() => addToBasket(product)} disabled={buttonState(type)}>+ Добавить</button>
         </div >
     )
 }

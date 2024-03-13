@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
+import { Routes, Route, useLocation, useNavigate, json } from 'react-router-dom';
 import './App.css';
 import { CurrentUserBasketContext } from '../context/userBasketContexts.js';
 import Header from '../Header/Header.js';
@@ -15,6 +15,12 @@ import Pizzas from '../Pizzas/Pizzas.js';
 import Rolls from '../Rolls/Rolls.js';
 import { api } from '../utils/Api.js';
 import Popup from '../Popup/Popup.js';
+import { useDispatch, useSelector } from 'react-redux';
+import { actions } from '../Store/Products/rollSlice.js';
+import { useAction } from '../hooks/useActions.js';
+import { useSelectorCastom } from '../hooks/useAllRoll.js';
+import PopupMain from '../PopupMain/Popup.js';
+import { calcSale } from '../Functions/calcSale.js';
 
 
 
@@ -26,6 +32,27 @@ function App() {
   const [rolls, setRoll] = useState([]);
   const [pizzas, setPizza] = useState([]);
   const [showProductPopup, setProductPopup] = useState({})
+  const basketPopupState = useSelector(state => state.basketPopupHandle);
+  const isOpenPopup = showProductPopup || basketPopupState
+
+  const closePopups = () => {
+    setProductPopup({});
+    toggleBasketPopup(null)
+  };
+
+  useEffect(() => {
+    function closeByEscape(evt) {
+      if (evt.key === 'Escape') {
+        closePopups();
+      }
+    }
+    if (isOpenPopup) {
+      document.addEventListener('keydown', closeByEscape);
+    }
+    return () => {
+      document.removeEventListener('keydown', closeByEscape);
+    }
+  }, [isOpenPopup])
 
   function openProductPopup(card) {
     setProductPopup(card)
@@ -33,31 +60,56 @@ function App() {
   function closeProductPopup(card) {
     setProductPopup({})
   }
+  const { addRolls } = useAction();
+  const { addPizzas } = useAction();
+  const { toggleBasketPopup } = useAction();
+
+  const testPPPP = useSelector(state => state.basketPopupHandle)
+  console.log(testPPPP)
+
+
+  const testState = useSelector(state => state)
+  console.log(testState)
 
   function rollTest() {
     api.rollGet()
-      .then(rolls => setRoll(rolls))
+      .then((rolls) => {
+        addRolls(rolls)
+        localStorage.setItem('rolls', JSON.stringify(rolls))//удалить позхже
+      })
       .catch((err) => console.log(err))
   }
 
   function pizzaTest() {
     api.pizzaGet()
       .then((pizzas) => {
-        setPizza(pizzas)
+        addPizzas(pizzas)
+        localStorage.setItem('pizzas', JSON.stringify(pizzas))//удалить позхже
       })
       .catch((err) => console.log(err))
   }
+  async function createAnonimOrder(basket, phone) {
+    let owner = localStorage.getItem("token")
+    console.log(owner)
+    const order = [];
+    basket.forEach(element => {
+      order.push(`${element.name}, ${element.quantityСounter}шт, Сумма ${calcSale(element.cost, element.sale) * element.quantityСounter} P`)
+    });
+    console.log(order)
+    api.anonimOrderCreate({ order: order, phone: phone, owner: owner })
+  }
 
   useEffect(() => {
-    rollTest()
     pizzaTest()
+    rollTest()
+
   }, [])
 
+  console.log(JSON.parse(localStorage.getItem('pizzas')))//удалить позхже
   useEffect(() => {
     if (localStorage.getItem("token")) {
       console.log(localStorage.getItem("token"))
       return
-
     }
     registrTest()
   }, [])
@@ -67,37 +119,24 @@ function App() {
       .then((res) => localStorage.setItem("token", res.token))
       .catch((err) => console.log(err))
   }
-  const testObj = {
-    "_id": "6597d5bc4eef2a15b4336d4e",
-    "name": "rol2",
-    "image": "https://eda.yandex/images/3580810/87fdfbdb59a468a09344080035881f5d-400x400.jpeg",
-    "proteins": "20",
-    "fats": "25",
-    "carbohydrates": "19",
-    "availability": true,
-    "cost": "290",
-    "type": "в наличии",
-    "__v": 0
-  }
-
-
 
   return (
     <>
       <CurrentUserBasketContext.Provider value={{ basketElementQuantityCounter, setBasketElementQuantityCounter }}>
-        {showHeader && <Header></Header>}
+        {showHeader && <Header toggleBasket={toggleBasketPopup}></Header>}
         <Popup card={showProductPopup} onClose={closeProductPopup}></Popup>
-      <Routes>
-        <Route path='/test' element={<Popup card={testObj}></Popup>}></Route>
-        <Route path='/' element={<Main></Main>}></Route>
-        <Route path='/products' element={<Products products={rolls} currLocation={currLocation}></Products>}></Route>
-        <Route path='/rolls' element={<Rolls products={rolls} openProductPopup={openProductPopup} showProductPopup={showProductPopup}></Rolls>}></Route>
-        <Route path='/pizzas' element={<Pizzas products={pizzas}></Pizzas>}></Route>
-        <Route path='/aboutus' element={<AboutUs></AboutUs>}></Route>
-        <Route path='/basket' element={<Basket></Basket>}></Route>
-      </Routes>
-      {showFooter && <Footer></Footer>}
-    </CurrentUserBasketContext.Provider >
+        <PopupMain children={<Basket />} togglePopup={toggleBasketPopup} isOpen={testPPPP} buttonText={'Все верно. Оформить заказ'} isValid={true} onSubmit={createAnonimOrder}></PopupMain>
+        <Routes>
+          <Route path='/test' element={<PopupMain children={<Basket />} buttonText={'Все верно. Оформить заказ'} isValid={true}></PopupMain>}></Route>
+          <Route path='/' element={<Main></Main>}></Route>
+          <Route path='/products' element={<Products products={rolls} currLocation={currLocation}></Products>}></Route>
+          <Route path='/rolls' element={<Rolls products={rolls} openProductPopup={openProductPopup} showProductPopup={showProductPopup}></Rolls>}></Route>
+          <Route path='/pizzas' element={<Pizzas products={pizzas} openProductPopup={openProductPopup} showProductPopup={showProductPopup}></Pizzas>}></Route>
+          <Route path='/aboutus' element={<AboutUs></AboutUs>}></Route>
+          <Route path='/basket' element={<Basket></Basket>}></Route>
+        </Routes>
+        {showFooter && <Footer></Footer>}
+      </CurrentUserBasketContext.Provider >
     </>
   );
 }

@@ -1,10 +1,12 @@
 import './rolls.css';
 import Products from '../Products/Products.js';
+import { useDispatch, useSelector } from 'react-redux';
+import { useAllRoll, useSelectorCastom } from '../hooks/useAllRoll.js';
 function Rolls({ products, openProductPopup, showProductPopup }) {
-    console.log(products)
+    const allRolls = useAllRoll()
     return (
         <section className='pizzzas'>
-            <Products products={products} openProductPopup={openProductPopup} showProductPopup={showProductPopup}></Products>
+            <Products products={allRolls} openProductPopup={openProductPopup} showProductPopup={showProductPopup}></Products>
         </section>
     )
 }

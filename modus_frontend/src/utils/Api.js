@@ -45,6 +45,18 @@ export default class Api {
         })
             .then(this._handleResponse)
     };
+    anonimOrderCreate({ order, phone, owner }) {
+
+        return fetch(this.url + '/order', {
+            method: 'POST',
+            credentials: 'include',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ products: order, phone: phone, owner:owner })
+        })
+            .then(this._handleResponse)
+    }
 }
 
 export const api = new Api({

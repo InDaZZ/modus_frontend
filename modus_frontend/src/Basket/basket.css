@@ -1,10 +1,10 @@
 .basket {
     max-width: 600px;
-    border: 2px solid rgb(255, 157, 46);
     border-radius: 10px;
-    margin: auto;
+    margin: 0 auto 50px;
     background-color: #FFFFFF;
-    padding-bottom: 50px;
+    max-height: 650px;
+    overflow: auto;
 }
 
 .basket__title {
@@ -17,4 +17,22 @@
 .basket__button {
     border: none;
     background-color: #FFFFFF;
+}
+
+.basket__info-container {
+    display: flex;
+    justify-content: center;
+}
+
+.basket__info-text {
+    display: block;
+    text-align: center;
+
+}
+
+.basket__info-emoji {
+    font-size: 22px;
+    display: flex;
+    align-self: center;
+    margin: 0;
 }
