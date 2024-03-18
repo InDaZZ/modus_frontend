@@ -53,10 +53,49 @@ export default class Api {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ products: order, phone: phone, owner:owner })
+            body: JSON.stringify({ products: order, phone: phone, owner: owner })
         })
             .then(this._handleResponse)
     }
+
+    adminLogin(name, password) {
+        console.log({ name: name, password: password })
+        return fetch(this.url + '/adminpanellogin', {
+            method: 'POST',
+            credentials: 'include',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ name: name, password: password })
+        })
+            .then(this._handleResponse)
+    }
+
+    adminCreateRoll(data) {
+       console.log(data)
+        return fetch(this.url + '/createroll', {
+            method: 'POST',
+            credentials: 'include',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(this._handleResponse)
+    }
+
+    adminDeletRoll(roll) {
+        console.log(roll)
+         return fetch(this.url + '/deletroll', {
+             method: 'DELETE',
+             credentials: 'include',
+             headers: {
+                 'Content-Type': 'application/json'
+             },
+             body: JSON.stringify(roll)
+         })
+             .then(this._handleResponse)
+     }
 }
 
 export const api = new Api({

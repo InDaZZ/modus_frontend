@@ -1,0 +1,15 @@
+.adminAuth__form {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.adminAuth__input {
+    display: block;
+    margin: 15px auto;
+    max-width: 70%;
+}
+
+.popup__container {
+    max-width: 500px;
+}

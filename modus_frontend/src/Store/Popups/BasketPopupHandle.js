@@ -1,14 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = null;
+const initialState = {
+    basket: false,
+    admin: false,
+    changeProduct:false,
+};
 
 export const basketPopupHanlde = createSlice({
     name: 'basketPopupHanlde',
     initialState,
     reducers: {
-        toggleBasketPopup: (state,{payload: sta}) => {
-            console.log(state)
-            return state=sta
+        toggleBasketPopup: (state, { payload: toggle }) => {
+            console.log(toggle)
+            return state = {...state, ...toggle}
         }
     }
 })

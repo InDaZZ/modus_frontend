@@ -1,0 +1,18 @@
+.adminpage {
+    
+}
+
+.adminpage__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.adminpage__form-heading {
+    margin: auto;
+}
+
+.adminpage__form-input {
+    display: block;
+    width: 80%;
+    margin: 15px auto;
+}

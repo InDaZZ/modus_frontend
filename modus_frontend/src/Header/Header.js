@@ -9,10 +9,13 @@ import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 
 function Header({ toggleBasket }) {
-   
-   console.log(useAction())
-   const { toggleBasketPopup } = useAction()
-   console.log(useSelector(state=>state.basketPopupHandle))
+   function openBasketPopup () {
+     return toggleBasket({basket: true}) 
+    }
+   //console.log(useAction())
+   //const { toggleBasketPopup } = useAction()
+   //console.log(useSelector(state=>state.basketPopupHandle))
+   console.log(toggleBasket)
    const basket = useBasket()
    let sums = 0;
   useEffect(() => { basketSum(basket) }, [basket])
@@ -36,7 +39,7 @@ function Header({ toggleBasket }) {
    
  }
 
-   console.log(toggleBasketPopup)
+   //console.log(toggleBasketPopup)
    return (
       <header className='header'>
          <img src={logoWhite} className='header__logo' alt='Логотип'></img>
@@ -44,7 +47,7 @@ function Header({ toggleBasket }) {
             <a href='#footer__contacts' className='header__navigation-element'>Контакты</a>
             <Link className='header__navigation-element' to={'/'}>На Главную</Link>
             <Link className='header__navigation-element' to={'/aboutus'}>О нас</Link>
-            <button className='header__basket-button' onClick={() => toggleBasket(true)}>
+            <button className='header__basket-button' onClick={openBasketPopup}>
                <span className='header__basket-image'></span>
                <span className='header__basket-sum'>{basketSum(basket) }</span>
             </button>
